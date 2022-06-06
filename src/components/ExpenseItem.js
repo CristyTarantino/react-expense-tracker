@@ -1,13 +1,15 @@
+import Card from './Card'
+import ExpenseDate from './ExpenseDate'
 import './ExpenseItem.css'
 
-export default function ExpenseItem () {
+export default function ExpenseItem ({ title, amount, date }) {
   return (
-    <div className="expense-item">
-      <div>May 28th 2021</div>
+    <Card className="expense-item">
+      <ExpenseDate date={date}/>
       <div className="expense-item__description">
-        <h2>Car Insurance</h2>
-        <div className="expense-item__price">£294.67</div>
+        <h2>{title}</h2>
+        <div className="expense-item__price">£{amount}</div>
       </div>
-    </div>
+    </Card>
   )
 }
