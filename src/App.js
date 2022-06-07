@@ -1,15 +1,22 @@
+import Expenses from 'components/Expenses/Expenses'
+import NewExpense from 'components/NewExpense/NewExpense'
+import { useState } from 'react'
 import './App.css'
-import Expenses from './components/Expenses'
 
 function App () {
-  const expenses = [
+  const [expenses, setExpenses] = useState([
     {
       id: 'e1',
       title: 'Toilet Paper',
       amount: 94.12,
       date: new Date(2020, 7, 14)
     },
-    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: 'e2',
+      title: 'New TV',
+      amount: 799.49,
+      date: new Date(2021, 2, 12)
+    },
     {
       id: 'e3',
       title: 'Car Insurance',
@@ -22,13 +29,16 @@ function App () {
       amount: 450,
       date: new Date(2021, 5, 12)
     }
-  ]
+  ])
+
+  function addExpenseHandler (newExpense) {
+    console.log(newExpense)
+    setExpenses(prevState => ([...prevState, newExpense]))
+  }
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Expense Tracker</h1>
-      </header>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses expenses={expenses}/>
     </div>
   )
