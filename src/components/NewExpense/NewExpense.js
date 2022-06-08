@@ -1,7 +1,7 @@
 import ExpenseForm from 'components/NewExpense/ExpenseForm'
 import './NewExpense.css'
 
-export default function NewExpense ({ onAddExpense }) {
+function NewExpense ({ onAddExpense }) {
   function saveExpenseDataHandler (enteredExpenseData) {
     const expenseData = {
       ...enteredExpenseData,
@@ -16,3 +16,5 @@ export default function NewExpense ({ onAddExpense }) {
     </div>
   )
 }
+
+export default NewExpense

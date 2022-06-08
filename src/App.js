@@ -32,7 +32,6 @@ function App () {
   ])
 
   function addExpenseHandler (newExpense) {
-    console.log(newExpense)
     setExpenses(prevState => ([...prevState, newExpense]))
   }
 

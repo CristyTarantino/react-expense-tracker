@@ -3,7 +3,7 @@ import Card from 'components/UI/Card'
 import { useState } from 'react'
 import './ExpenseItem.css'
 
-export default function ExpenseItem ({ title: titleProp, amount, date }) {
+function ExpenseItem ({ title: titleProp, amount, date }) {
   const [title, setTitle] = useState(titleProp)
 
   function clickHandler (newTitle) {
@@ -21,3 +21,5 @@ export default function ExpenseItem ({ title: titleProp, amount, date }) {
     </Card>
   )
 }
+
+export default ExpenseItem
